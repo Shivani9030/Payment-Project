@@ -13,7 +13,8 @@ public class UserPrincipleService implements UserDetailsService {
 
     EmployeeRepository employeeRepository;
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         return employeeRepository.getById(s);
     }

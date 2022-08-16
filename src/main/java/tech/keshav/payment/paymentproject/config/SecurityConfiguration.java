@@ -26,6 +26,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+@SuppressWarnings("deprecation")
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -91,7 +92,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
    }
 
-   @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
+   @SuppressWarnings("deprecation")
+@Bean(name = BeanIds.AUTHENTICATION_MANAGER)
    @Override
    public AuthenticationManager authenticationManagerBean() throws Exception {
        return super.authenticationManagerBean();
